@@ -23,3 +23,19 @@ int main(){
     }
     
 }
+
+//But in case other case...for ex. sorting...
+
+bool compare(pair<int, int> p1, pair<int, int> p2)
+{
+    // If frequencies of two elements are same
+    // then the larger number should come first
+    if (p1.second == p2.second)
+        return p1.first > p2.first;
+ 
+    // Sort on the basis of decreasing order
+    // of frequencies
+    return p1.second > p2.second;
+}
+
+sort(freq_arr.begin(), freq_arr.end(), compare);
