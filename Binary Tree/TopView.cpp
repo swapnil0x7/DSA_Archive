@@ -27,3 +27,28 @@ vector<int> getTopView(TreeNode<int> *root) {
     }
     return res;
 }
+
+//Recursive
+void topView(TreeNode<int>* root, int height, int level, map<int,pair<int,int>> &mp){
+    if(!root) return;
+    
+    if(mp.find(level) == mp.end()){                                             //we must maintain the vertical level and height.
+        mp[level] = {root->val, height};
+    }
+    else if(mp[level].second >= height){
+        mp[level] = {root->val, height};
+    }
+    topView(root->left, height+1, level-1, mp);
+    topView(root->right, height+1, level+1, mp);
+}
+
+vector<int> getTopView(TreeNode<int> *root) {
+    map<int, pair<int,int>> mp;
+    vector<int> res;
+    topView(root,0, 0, mp);
+    
+    for(auto i: mp){
+        res.push_back(i.second.first);
+    }
+    return res;
+}
