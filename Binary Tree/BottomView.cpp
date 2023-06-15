@@ -27,3 +27,29 @@ vector<int> bottomView(BinaryTreeNode<int> * root){
     return res;
 }
 
+//Recursive
+void inorder(BinaryTreeNode<int>* root, int height, int level, map<int,pair<int,int>> &mp){
+    if(!root) return;
+    
+    if(mp.find(level) == mp.end()){
+        mp[level] = {root->data, height};
+    }
+    else if(mp[level].second <= height){
+        mp[level] = {root->data, height};
+    }
+    inorder(root->left, height+1, level-1, mp);
+    inorder(root->right, height+1, level+1, mp);
+}
+
+vector<int> bottomView(BinaryTreeNode<int> * root){
+
+    map<int, pair<int,int>> mp;
+    vector<int> res;
+    inorder(root,0, 0, mp);
+    
+    for(auto i: mp){
+        res.push_back(i.second.first);
+    }
+    return res;
+}
+
