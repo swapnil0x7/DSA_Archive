@@ -35,7 +35,7 @@ void topView(TreeNode<int>* root, int height, int level, map<int,pair<int,int>> 
     if(mp.find(level) == mp.end()){                                             //we must maintain the vertical level and height.
         mp[level] = {root->val, height};
     }
-    else if(mp[level].second >= height){
+    else if(mp[level].second > height){
         mp[level] = {root->val, height};
     }
     topView(root->left, height+1, level-1, mp);
