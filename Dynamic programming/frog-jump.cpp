@@ -1,5 +1,6 @@
 #include <bits/stdc++.h> 
 
+//Memoization
 int f(int i, vector<int> &arr, vector<int> &dp){
     if(i==0) return 0;
 
@@ -17,3 +18,22 @@ int frogJump(int n, vector<int> &arr)
     vector<int> dp(n, -1);
     return f(n-1, arr, dp);
 }
+
+
+//Tabulation
+int frogJump(int n, vector<int> &arr)
+{   
+    vector<int> dp(n);
+    dp[0] = 0;
+
+    for(int i=1;i<n;i++){
+        int one_step = dp[i-1] + abs(arr[i] - arr[i-1]);
+        int two_step = INT_MAX;
+        if(i>1) two_step = dp[i-2] + abs(arr[i] - arr[i-2]);
+
+        dp[i] = min(one_step, two_step);
+    }
+    return dp[n-1];
+}
+
+//O(N) and O(N)
