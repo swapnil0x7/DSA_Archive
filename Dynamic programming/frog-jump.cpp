@@ -36,4 +36,20 @@ int frogJump(int n, vector<int> &arr)
     return dp[n-1];
 }
 
-//O(N) and O(N)
+//Space Optimised
+int frogJump(int n, vector<int> &arr)
+{   
+    int prev = 0;
+    int prev2 = 0;
+
+    for(int i=1;i<n;i++){
+        int one_step = prev + abs(arr[i] - arr[i-1]);
+        int two_step = INT_MAX;
+        if(i>1) two_step = prev2 + abs(arr[i] - arr[i-2]);
+
+        int ans = min(one_step, two_step);
+        prev2 = prev;
+        prev = ans;
+    }
+    return prev;
+}
