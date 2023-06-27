@@ -1,6 +1,6 @@
 Link - https://www.codingninjas.com/studio/problems/rose-garden_2248080?utm_source=youtube&utm_medium=affiliate&utm_campaign=codestudio_Striver_BinarySeries&leftPanelTab=0
 
-bool isPossible(vector<int> &arr, int mid, int m, int k){
+bool isPossible(vector<int> &arr, int mid, int m, int k){		
 	int count = 0, noOfBouquets = 0;
 
 	for(int i=0;i<arr.size();i++){
@@ -19,8 +19,8 @@ bool isPossible(vector<int> &arr, int mid, int m, int k){
 int roseGarden(vector<int> arr, int k, int m)
 {	
 	int n = arr.size();
-	long long int totalRequired = k*1LL * m*1LL;
-	if(n < totalRequired) return -1;
+	long long int totalRequired = k*1LL * m*1LL;			//converting int to long during multiplication to avoid overflow
+	if(n < totalRequired) return -1;				// checking for invalid case
 
 	int minimum = 0, maximum = 0;
 	for(int i=0;i<n;i++){
@@ -39,3 +39,6 @@ int roseGarden(vector<int> arr, int k, int m)
 	}
 	return low;
 }
+
+// Time complexity - O(N * log(maximum-minimum))
+// Space Complexity - O(1)
