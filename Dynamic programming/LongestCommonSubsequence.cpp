@@ -68,5 +68,7 @@ int lcs(string a, string b)
     }
     return dp[n][m];
 }
+🔥 //FOR PRINTING THE LCS GO THROUGH THIS -> https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=27
+💡 //ALSO DO THE LONGEST PALINDROMIC SUBSEQUENCE PROBLEM, IT'S RELATED TO THIS. 
 
-🍕 //ALSO DO THE LONGEST PALINDROMIC SUBSEQUENCE PROBLEM, IT'S RELATED TO THIS. 
+
