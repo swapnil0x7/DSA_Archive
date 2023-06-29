@@ -68,3 +68,5 @@ int lcs(string a, string b)
     }
     return dp[n][m];
 }
+
+🍕 //ALSO DO THE LONGEST PALINDROMIC SUBSEQUENCE PROBLEM, IT'S RELATED TO THIS. 
