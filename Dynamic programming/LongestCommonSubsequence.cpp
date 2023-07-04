@@ -68,6 +68,29 @@ int lcs(string a, string b)
     }
     return dp[n][m];
 }
+
+//Space Optimization
+int Solution::solve(string A, string B) {
+    int n = A.size();
+    int m = B.size();
+    vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
+    vector<int> prev(m+1, 0), curr(m+1, 0);
+    
+    for(int j=0;j<=m;j++) prev[j] = 0;
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            if(A[i-1] == B[j-1]) 
+                curr[j] = 1 + prev[j-1];
+            else
+                curr[j] = max(prev[j], curr[j-1]);
+        }
+        prev = curr;
+    }
+
+    return prev[m];
+}
+
 🔥 //FOR PRINTING THE LCS GO THROUGH THIS -> https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=27
 💡 //ALSO DO THE LONGEST PALINDROMIC SUBSEQUENCE PROBLEM, IT'S RELATED TO THIS. 
 
