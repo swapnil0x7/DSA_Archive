@@ -91,7 +91,8 @@ int Solution::solve(string A, string B) {
     return prev[m];
 }
 
-🔥 //FOR PRINTING THE LCS GO THROUGH THIS -> https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=27
-💡 //ALSO DO THE LONGEST PALINDROMIC SUBSEQUENCE PROBLEM, IT'S RELATED TO THIS. 
-
-
+💡 // Minimum Insertions/Deletions to Convert String A to String B - https://www.youtube.com/watch?v=yMnH0jrir0Q&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=31
+💡 // Minimum Insertions to Make String Palindrome - https://www.youtube.com/watch?v=xPBLEj41rFU&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=30
+💡 // Longest Palindromic Subsequence - https://www.youtube.com/watch?v=6i_T5kkfv4A&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=30
+💡 // Longest Common Substring - https://www.youtube.com/watch?v=_wP9mWNPL5w&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=28
+💡 // Print Longest Common Subsequence - https://www.youtube.com/watch?v=-zI4mrF2Pb4&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=27
