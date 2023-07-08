@@ -1,3 +1,4 @@
+//BFS Traversal
 vector<int> bfsOfGraph(int n, vector<int> adj[]) {
     vector<int> res;
     vector<bool> visited(n, false);
