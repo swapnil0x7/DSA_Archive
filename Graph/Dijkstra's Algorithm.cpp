@@ -25,5 +25,6 @@ vector <int> dijkstra(int n, vector<vector<int>> adj[], int s)
     return dist;
     
 }
+// Important - Derivation of Time Complexity - https://www.youtube.com/watch?v=3dINsjyfooY&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=34
 // why Dijkstra's does not work in negative weight weights and negative cycle 👇
 // https://www.youtube.com/watch?v=V6H1qAeB-l4&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&index=32
