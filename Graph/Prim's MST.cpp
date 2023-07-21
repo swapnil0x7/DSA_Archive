@@ -1,3 +1,5 @@
+// The intuition behine prim's algorithm is a greedy approach to select the minimum wt. edges in every iteration. (watch TUF video)
+
 int spanningTree(int n, vector<vector<int>> adj[])
 {
     vector<int> visited(n, 0);
