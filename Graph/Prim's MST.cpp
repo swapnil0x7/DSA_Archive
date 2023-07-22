@@ -4,12 +4,10 @@ int spanningTree(int n, vector<vector<int>> adj[])
 {
     vector<int> visited(n, 0);
     
-    vector<pair<int,int>> mst;
+    // vector<pair<int,int>> mst;         list for printing one of the possible mst
     
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
     pq.push({0, 0});
-    
-    // vector<pair<int,int>> mst;         list for printing one of the possible mst
     
     int sum = 0;
     
