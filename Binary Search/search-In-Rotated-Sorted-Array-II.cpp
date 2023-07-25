@@ -4,15 +4,15 @@ bool searchInARotatedSortedArrayII(vector<int>&arr, int x) {
     
     while(low <= high){
         int mid = low + (high - low)/2;
-
+    
         if(arr[mid] == x) return true;
-
+    
         if(arr[low] == arr[mid] and arr[mid] == arr[high]){
             low++;
             high--;
             continue;   
         }
-
+    
         if(arr[low] <= arr[mid]){
             if(x >= arr[low] and x < arr[mid])
                 high = mid - 1;
@@ -27,5 +27,5 @@ bool searchInARotatedSortedArrayII(vector<int>&arr, int x) {
         }
     }
     return false;
-
-}
+    
+    }
