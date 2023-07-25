@@ -1,4 +1,7 @@
 // First check which part is sorted, then on the basis of target's position eliminate either the sorted half of unsorted half.
+// Basically we are first identifying the sorted part so that we can check if the target is in that sorted range or not. If it's present
+// then we remove the unsorted part. If not present then we eliminate the sorted part!
+
 
 int search(vector<int>& arr, int n, int x)
 {
