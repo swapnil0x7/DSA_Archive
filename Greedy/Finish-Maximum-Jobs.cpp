@@ -12,10 +12,10 @@ int Solution::solve(vector<int> &A, vector<int> &B) {
     }
     sort(arr.begin(), arr.end(), cmp);
 
-    int total = 0;
-    int lastEndTime = -1;
+    int total = 1;
+    int lastEndTime = arr[0].second;
 
-    for(int i=0;i<n;i++){
+    for(int i=1;i<n;i++){
         int startTime = arr[i].first;
         int endTime = arr[i].second;
 
