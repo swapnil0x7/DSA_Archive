@@ -69,7 +69,8 @@ bool canPartition(vector<int>& arr) {
 	vector<int>prev(sum+1, 0), curr(sum+1, 0);
 	    
 	//base cases
-	for(int i=0;i<n;i++) prev[0] = true;
+	prev[0] = true;
+	curr[0] = true;
 	if(arr[0] <= sum) prev[arr[0]] = true;
 	
 	for(int i=1;i<n;i++){
