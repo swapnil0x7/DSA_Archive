@@ -41,3 +41,26 @@ int findWays(vector<int> &arr, int k)
 	return dp[n-1][k]%mod;
 }
 
+// space optimised
+
+int findWays(vector<int> &arr, int k)
+{
+	int n = arr.size();
+	int mod = 1e9+7;
+
+	vector<int> prev(k+1, 0), curr(k+1, 0);
+
+	prev[0] = 1, curr[0] = 1;
+	if(arr[0] <= k) prev[arr[0]] = 1;
+	
+	for(int i=1;i<n;i++){
+		for(int target = 1; target<=k; target++){
+			int notPick = prev[target];
+			int pick =0;
+			if(arr[i] <= target) pick = prev[target-arr[i]];
+			curr[target] = (pick + notPick)%mod;
+		}
+		prev = curr;
+	}
+	return prev[k]%mod;
+}
