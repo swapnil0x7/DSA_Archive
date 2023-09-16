@@ -7,7 +7,7 @@ int f(int i, int j, string &str1, string &str2, vector<vector<int>> &dp){
     if(dp[i][j] != -1) return dp[i][j];
 
     if(str1[i] == str2[j]) {
-        return f(i-1, j-1, str1, str2, dp);
+        return dp[i][j] = f(i-1, j-1, str1, str2, dp);
     }
 
     return dp[i][j] = 1 + min(f(i-1, j-1, str1, str2, dp), min(f(i, j-1, str1, str2, dp), f(i-1, j, str1, str2, dp)));      //perform all the operations - delete, insert and replace.
