@@ -50,22 +50,8 @@ int editDistance(string str1, string str2)
     return f(n, m, str1, str2, dp);
 }
 
-//Tabulation 
-int f(int i, int j, string &str1, string &str2, vector<vector<int>> &dp){
 
-    if(i==0) return j;
-    if(j==0) return i;
-
-    if(dp[i][j] != -1) return dp[i][j];
-
-    if(str1[i-1] == str2[j-1]) {
-        return f(i-1, j-1, str1, str2, dp);
-    }
-
-    return dp[i][j] = 1 + min(f(i-1, j-1, str1, str2, dp), min(f(i, j-1, str1, str2, dp),f(i-1, j, str1, str2, dp)));
-}
-
-
+// tabulation
 int editDistance(string str1, string str2)
 {
     int n = str1.size();
@@ -89,3 +75,32 @@ int editDistance(string str1, string str2)
 
     return dp[n][m];
 }
+
+// space optimised
+class Solution {
+public:
+    int minDistance(string A, string B) {
+        int n = A.size(), m = B.size();
+        
+        vector<int> prev(m+1, 0), curr(m+1, 0);
+        for(int j=0;j<=m;j++){
+            prev[j] = j;                // base case 1
+        }
+
+        for(int i=1;i<=n;i++){
+            curr[0] = i;                // base case 2
+            for(int j=1;j<=m;j++){
+                if(A[i-1] == B[j-1])
+                    curr[j] = prev[j-1];
+                else{
+                    int del = 1 + prev[j];
+                    int replace = 1 + prev[j-1];
+                    int insert = 1 + curr[j-1];
+                    curr[j] = min(del, min(replace, insert));
+                }
+            }
+            prev = curr;
+        }
+        return prev[m];
+    }
+};
