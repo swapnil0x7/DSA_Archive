@@ -16,8 +16,11 @@ int studentsRequired(vector<int> &arr, int pages_limit){
 }
 
 int findPages(vector<int>& arr, int n, int m) {
-    int low = 0, high = 0;
+    int low = 0, high = 0;    
 
+    // this of it as you need to divide the array into sections.
+    // for low, low = max(arr) which will give each man a book.
+    // for high, high = sum(arr) which will give all the books to 1 person.
     for(int i=0;i<n;i++){
         low = max(low, arr[i]);
         high += arr[i];
