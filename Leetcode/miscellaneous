@@ -1,2 +1,5 @@
 Minimum difference pair in an array -  https://practice.geeksforgeeks.org/problems/minimum-difference-pair5444/1
+
+(sliding window and two pointers)
 Longest Substring with At Most K Distinct Characters - https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+Minimum Consecutive Cards to Pick Up - https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/description/
